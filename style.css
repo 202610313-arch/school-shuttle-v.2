@@ -1,0 +1,330 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Malgun Gothic', sans-serif;
+}
+
+body {
+    background-color: #f5f7fb;
+    color: #333;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: #ff4757;
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+}
+
+.menu-section {
+    flex: 1;
+    height: 750px; /* 건의함 높이에 맞춰 살짝 조절 */
+    display: flex;
+    flex-direction: column;
+}
+
+.tip {
+    font-size: 0.8rem;
+    color: #1e90ff;
+    font-weight: normal;
+    display: block;
+    margin-top: 4px;
+}
+
+#menuList {
+    list-style: none;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.main-content {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+section {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+h2 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: #2f3542;
+    border-bottom: 2px solid #f1f2f6;
+    padding-bottom: 8px;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 8px;
+    border-bottom: 1px dashed #eee;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    border-radius: 6px;
+}
+
+.menu-item:hover {
+    background-color: #e8f4ff;
+}
+
+.menu-item .price {
+    font-weight: bold;
+    color: #57606f;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.btn-clear {
+    position: absolute;
+    right: 10px;
+    top: 28px;
+    background: #747d8c;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.price-notice {
+    background-color: #fff8ee;
+    border: 1px solid #ffeaa7;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: #d63031;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff4757;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.order-item {
+    background: #fff;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 5px solid #2ed573;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.order-item.processing {
+    border-left: 5px solid #ffa500;
+    background: #fffaf0;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 3px 6px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+.status-badge.waiting { background: #2ed573; color: white; }
+.status-badge.active { background: #ffa500; color: white; }
+
+.btn-accept, .btn-chat-open {
+    padding: 10px 15px;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.btn-accept { background-color: #2ed573; }
+.btn-chat-open { background-color: #1e90ff; }
+
+/* 피드백 건의함 스타일 */
+.feedback-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.feedback-form input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+.feedback-form button {
+    padding: 10px 20px;
+    background: #2f3542;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.feedback-list {
+    max-height: 150px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.feedback-card {
+    background: #f8f9fa;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    border-left: 3px solid #747d8c;
+    line-height: 1.4;
+}
+
+/* 1:1 대화방 레이아웃 */
+.chat-container {
+    max-width: 600px;
+    margin: 30px auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    overflow: hidden;
+}
+
+.chat-header {
+    background: #2f3542;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-back, .btn-complete {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.btn-back { background: #57606f; color: white; }
+.btn-complete { background: #2ed573; color: white; }
+
+.chat-info-bar {
+    background: #f1f2f6;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #ddd;
+    line-height: 1.4;
+}
+
+.chat-window {
+    flex: 1;
+    padding: 20px;
+    background: #e3edf7;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.chat-bubble {
+    max-width: 75%;
+    padding: 10px 14px;
+    border-radius: 14px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.chat-bubble.requester { background: white; align-self: flex-start; border-top-left-radius: 0; }
+.chat-bubble.acceptor { background: #ffeaa7; align-self: flex-end; border-top-right-radius: 0; }
+
+.chat-input-group {
+    display: flex;
+    padding: 15px;
+    background: white;
+    border-top: 1px solid #eee;
+    gap: 10px;
+}
+
+.chat-input-group input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.chat-input-group button {
+    padding: 12px 20px;
+    background: #ff4757;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container { flex-direction: column; }
+    .menu-section { height: 300px; }
+}

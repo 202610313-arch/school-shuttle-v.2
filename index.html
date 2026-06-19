@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>매점 셔틀 - 5000동의 행복</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="mainHeader">
+        <h1>🏪 매점 셔틀</h1>
+        <p>매점 가기 귀찮을 땐? 5000동 주고 부탁해보세요!</p>
+    </header>
+
+    <div class="container" id="mainContainer">
+        <section class="menu-section">
+            <h2>📋 매점 메뉴 및 가격표 <span class="tip">💡 메뉴를 클릭하면 자동 입력됩니다!</span></h2>
+            <div class="search-box">
+                <input type="text" id="menuSearch" placeholder="메뉴 검색...">
+            </div>
+            <ul id="menuList">
+                </ul>
+        </section>
+
+        <div class="main-content">
+            <section class="order-form-section">
+                <h2>📝 심부름 요청하기</h2>
+                <form id="orderForm">
+                    <div class="input-group">
+                        <label for="room">📍 배달받을 교실/장소</label>
+                        <input type="text" id="room" placeholder="예: 2학년 3반" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="items">🛍️ 사다 줄 물건 (왼쪽 메뉴를 클릭하세요)</label>
+                        <input type="text" id="items" placeholder="예: 데미소다 1개, 단팥빵 2개" required readonly>
+                        <button type="button" id="btnClearItems" class="btn-clear">초기화</button>
+                    </div>
+                    <div class="input-group">
+                        <label for="memo">💬 추가 요청사항</label>
+                        <input type="text" id="memo" placeholder="예: 우유는 꼭 차가운 걸로 사다 주세요!">
+                    </div>
+                    <div class="price-notice">
+                        💸 기본 배달비 <strong>5,000 VND</strong>가 자동으로 합산됩니다.
+                    </div>
+                    <button type="submit" class="btn-submit">배달 요청 등록하기</button>
+                </form>
+            </section>
+
+            <section class="order-list-section">
+                <h2>🚴 실시간 심부름 요청 목록</h2>
+                <ul id="orderList">
+                    </ul>
+            </section>
+
+            <section class="feedback-section">
+                <h2>📢 앱 피드백 & 한줄 건의함</h2>
+                <form id="feedbackForm" class="feedback-form">
+                    <input type="text" id="feedbackInput" placeholder="불편한 점이나 추가했으면 하는 메뉴를 적어주세요!" required>
+                    <button type="submit">등록</button>
+                </form>
+                <div class="feedback-list" id="feedbackList">
+                    </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="chat-container" id="chatContainer" style="display: none;">
+        <div class="chat-header">
+            <button id="btnBackToMain" class="btn-back">⬅️ 목록으로 돌아가기</button>
+            <h2 id="chatRoomTitle">대화방</h2>
+            <button id="btnCompleteOrder" class="btn-complete">✅ 배달 완료하기</button>
+        </div>
+        <div class="chat-info-bar" id="chatInfoBar">
+            </div>
+        <div class="chat-window" id="chatWindow">
+            </div>
+        <div class="chat-input-group">
+            <input type="text" id="chatInput" placeholder="메시지를 입력하세요...">
+            <button id="btnSendChat">전송</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
